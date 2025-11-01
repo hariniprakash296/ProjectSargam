@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Yellow and Orange color scheme as per PRD requirements */
+    --background: 0 0% 100%;
+    --foreground: 24 9.8% 10%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 24 9.8% 10%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 9.8% 10%;
+    
+    --primary: 38 92% 50%; /* Vibrant orange */
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 48 96% 89%; /* Light yellow */
+    --secondary-foreground: 24 9.8% 10%;
+    
+    --muted: 48 96% 96%;
+    --muted-foreground: 24 9.8% 45%;
+    
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 48 96% 89%;
+    --input: 48 96% 89%;
+    --ring: 38 92% 50%;
+    
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 24 9.8% 10%;
+    --foreground: 0 0% 98%;
+    
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 24 9.8% 10%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 38 92% 50%;
+    --primary-foreground: 24 9.8% 10%;
+    
+    --secondary: 24 9.8% 18%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 24 9.8% 18%;
+    --muted-foreground: 24 9.8% 65%;
+    
+    --accent: 24 9.8% 18%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 24 9.8% 18%;
+    --input: 24 9.8% 18%;
+    --ring: 38 92% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/50;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
